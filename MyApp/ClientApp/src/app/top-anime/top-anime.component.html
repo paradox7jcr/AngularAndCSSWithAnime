@@ -1,0 +1,28 @@
+<div>
+  <div>
+    <h1>Top Anime List </h1>
+  </div>
+
+  <p *ngIf="!topAnimeList"><em>Loading...</em></p>
+
+  <table class='table' *ngIf="topAnimeList">
+    <thead>
+      <img class="top-line" src="https://i.imgur.com/pCzCrf5.png"/>
+      <img class="side-line" src="https://i.imgur.com/pCzCrf5.png"/>
+    <tr>
+      <th>Title</th>
+      <th>Rank</th>
+      <th>Score</th>
+      <th>Episodes</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let anime of topAnimeList">
+      <td class="thumbnail">{{ anime.title }}<span><img src="{{anime.image_url}}"/></span></td>
+      <td>{{ anime.rank }}</td>
+      <td>{{ anime.score }}</td>
+      <td>{{ anime.episodes }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

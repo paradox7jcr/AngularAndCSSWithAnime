@@ -1,0 +1,123 @@
+div {
+  margin: auto;
+}
+h1 {
+  background-color: #006e90;
+  color: white;
+  text-align: center;
+  border: 10px solid #006e90;
+  border-radius: 10px;
+  width: 95%;
+  height: 95%;
+  margin: 20px auto 20px;
+  font-size: 350%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation: table-slide-in;
+  animation-duration: 3s;
+}
+
+table {
+  background-color: #006e90;
+  color: white;
+  width: 95%;
+  height: 95%;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation: table-slide-in;
+  animation-duration: 3s;
+} 
+
+th {
+  color: #99c24d;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+tr {
+  border: 5px solid #adcad6;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.thumbnail {
+  position: relative;
+  margin: auto;
+  border: none;
+  background-color: inherit;
+}
+
+.thumbnail span {
+  position: absolute;
+  visibility: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.thumbnail:hover span {
+  visibility: visible;
+  left: 300px;
+  top: 0;
+  z-index: 50;
+  animation-name: fold-out;
+  animation-duration: .5s;
+  animation-timing-function: ease-out;
+}
+
+.top-line {
+  position: absolute;
+  animation: extend-right-fade-in;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  transform-origin: left;
+}
+
+.side-line {
+  position: absolute;
+  animation: extend-down-fade-in;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  transform-origin: left;
+}
+
+@keyframes fold-out {
+  from {
+    transform: scale(0.1, 0.1);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes table-slide-in {
+  from {
+    transform: translate(-10px, -10px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+  
+
+@keyframes extend-right-fade-in {
+  from {
+    transform: translate(-100px, -10px) scale(0, 2);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(-10px, -5px) scale(7, 2);
+    opacity: 1;
+  }
+}
+
+@keyframes extend-down-fade-in {
+  from {
+    transform: translate(-15px, 100px) rotate(90deg) scale(0, 2);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(-8px, -5px) rotate(90deg) scale(11, 2);
+    opacity: 1;
+  }
+}
